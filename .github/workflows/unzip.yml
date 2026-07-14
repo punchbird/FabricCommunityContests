@@ -10,6 +10,9 @@ jobs:
   unzip:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -29,4 +32,3 @@ jobs:
           git add data/*
           git commit -m "Update extracted Round 2 CSVs" || echo "No changes"
           git push origin main
-
